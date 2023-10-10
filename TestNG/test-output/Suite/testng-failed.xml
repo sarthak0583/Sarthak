@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="TestonFirefox(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="parallalTesting_Crossbrowser.Assignment_Payment_Amazon">
+        <methods>
+          <include name="Sc1" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- parallalTesting_Crossbrowser.Assignment_Payment_Amazon -->
+    </classes>
+  </test> <!-- TestonFirefox(failed) -->
+</suite> <!-- Failed suite [Suite] -->

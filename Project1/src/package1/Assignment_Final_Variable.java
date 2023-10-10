@@ -1,0 +1,41 @@
+package package1;
+public class Assignment_Final_Variable
+{
+	final static double pi=3.14;
+	static void circle()
+	{
+		int radius=7;
+		double area =pi*radius*radius;
+		System.out.println(area);
+	}
+	static void rectangular()
+	{
+		int lenght=10;
+		int breath=20;
+		int area =lenght*breath;
+		System.out.println(area);
+	}
+	void square()
+	{
+		int lenght=10;
+		int area =lenght*lenght;
+		System.out.println(area);
+	}
+	static void triangle()
+	{
+		int height=7;
+		int breath=8;
+		double area =0.5*breath*height;
+		System.out.println(area);
+	}
+ public static void main(String[] args)
+  {
+		circle();
+		rectangular();
+		Assignment_Final_Variable f1= new Assignment_Final_Variable();
+		f1.square();
+		triangle();
+
+	}
+
+}

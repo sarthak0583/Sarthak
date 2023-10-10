@@ -1,0 +1,33 @@
+package programe;
+
+import java.time.Duration;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+public class Implicitwait_Class 
+{
+	@Test
+	public void login()
+	{
+		ChromeDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.navigate().to("https://www.google.com");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		String title=driver.getTitle();
+		WebDriverWait w1=new WebDriverWait(driver, Duration.ofSeconds(10));
+//		w1.until(ExpectedConditions.titleContains(title));
+		w1.until(ExpectedConditions.titleIs(title));
+//		w1.until(ExpectedConditions.alertIsPresent());
+		WebElement search=driver.findElement(By.name("q"));
+		search.sendKeys("India");
+		List<WebElement> autos=driver.findElements(By.xpath("//div[@class='OBMEnb']//ul/li"));
+		System.out.println(autos.size());
+		autos.get(3).click();
+		
+	}
+
+}

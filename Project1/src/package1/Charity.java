@@ -1,0 +1,17 @@
+package package1;
+
+public class Charity 
+{
+	public static void salary()
+	{
+int monthlysalary=2000;
+int months=12;
+double donationamout=(monthlysalary*months)*0.1;
+System.out.println(donationamout);
+	}
+	public static void main(String[] args) 
+	{
+		salary();
+	}
+
+}

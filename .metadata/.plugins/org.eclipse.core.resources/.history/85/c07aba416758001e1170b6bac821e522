@@ -1,0 +1,12 @@
+package programe;
+
+import java.time.Duration;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RightClick_DoubleClick_Robot_Class 
+{
+	ChromeDriver driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.amazon.in");
+}

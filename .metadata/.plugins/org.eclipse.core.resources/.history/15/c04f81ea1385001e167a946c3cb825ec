@@ -1,0 +1,71 @@
+package practice;
+
+import java.time.Duration;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Make_My_Trip 
+{
+WebDriver driver;
+@Test(enabled=false)
+public void booking() throws InterruptedException
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.makemytrip.com/");
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	WebElement frame1=driver.findElement(By.id("webklipper-publisher-widget-container-notification-frame"));
+	driver.switchTo().frame(frame1);
+	driver.findElement(By.xpath("//i[@class='wewidgeticon we_close']")).click();
+	driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
+	driver.findElement(By.xpath("(//span[@class='headerIconTextAlignment chNavText darkGreyText'])[5]")).click();
+	driver.findElement(By.xpath("//label[@class='makeFlex column latoRegular']")).sendKeys("Pune");
+	Thread.sleep(3000);
+	driver.findElement(By.id("toCity")).sendKeys("bbs");
+	Thread.sleep(3000);
+	List<WebElement> to=driver.findElements(By.xpath("//div[@class='react-autosuggest__section-container react-autosuggest__section-container--first']/ul/li"));
+	to.get(0).click();
+	driver.findElement(By.id("travelDate")).click();
+	driver.findElement(By.xpath("//div[@aria-label='Tue Dec 12 2023']")).click();
+	driver.findElement(By.xpath("//div[@class='code latoBlack font32 blackText makeRelative']")).click();
+	List<WebElement> clas=driver.findElements(By.xpath("//div[@class='rsw_inputBox travelFor inactiveWidget activeWidget']/ul/li"));
+	clas.get(2).click();
+	driver.findElement(By.xpath("//a[@class='primaryBtn font24 latoBold widgetSearchBtn']")).click();
+	driver.findElement(By.id("train_options_12-12-2023_0")).click();
+	driver.findElement(By.xpath("(//div[@class='cg-radio-button-inner false'])[2]")).click();
+	driver.findElement(By.id("contactEmail")).sendKeys("Sarthakcool223@gmail.com");
+	driver.findElement(By.id("mobileNumber")).sendKeys("7008963458");
+	driver.findElement(By.xpath("//a[@class='paymentBtn whiteText latoBlack font16 capText']")).click();
+}
+@Test(enabled=false)
+public void checkpnr()
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.makemytrip.com/railways/");
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
+	driver.findElement(By.xpath("//span[.='Check PNR Status']")).click();
+	driver.findElement(By.id("pnr")).sendKeys("6227451501");
+	driver.findElement(By.xpath("//a[.='CHECK STATUS']")).click(); 
+}
+@Test
+public void livestatus()
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.makemytrip.com/railways/");
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
+	driver.findElement(By.xpath("//span[@class='active blackText latoBlack']")).click();
+	driver.findElement(By.xpath("//input[@class='react-autosuggest__input react-autosuggest__input--open']")).sendKeys("11020");
+	List<WebElement> trainno=driver.findElements(By.xpath("//div[@class='react-autosuggest__section-container react-autosuggest__section-container--first']/ul/li"));
+	trainno.get(0).click();
+	driver.findElement(By.xpath("//span[.='Select Station']")).sendKeys("");
+	
+}
+}

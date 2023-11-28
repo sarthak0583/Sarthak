@@ -1,0 +1,32 @@
+package newpackage;
+class Supercalling_Statement1
+{
+	Supercalling_Statement1()
+	{
+		System.out.println("Hii!!");
+	}
+	Supercalling_Statement1(int a)
+	{
+		this();
+		System.out.println("Hello!!");
+	}
+}
+/*public class Supercalling_Statement extends Supercalling_Statement1
+{
+	Supercalling_Statement(double b)
+	{
+		//super(5);
+		System.out.println("Hey!!");  
+	}
+	Supercalling_Statement(boolean e)
+	{
+		this(5.55);
+		System.out.println("Heyyyyy!!");  
+	}
+	public static void main(String[] args)
+	{
+		new Supercalling_Statement(true);
+		//new Supercalling_Statement1();
+	}*/
+	
+}

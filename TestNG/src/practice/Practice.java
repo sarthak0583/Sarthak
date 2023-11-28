@@ -1,0 +1,13 @@
+package practice;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class Practice
+{
+@Test
+public void one()
+{
+	//WebDriver driver=new Webdriver();
+}
+}

@@ -1,0 +1,47 @@
+package practice;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+public class KT
+{
+WebDriver driver;
+@Test
+public void one() throws AWTException
+{
+	
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.google.com");
+	WebDriverWait w1=new WebDriverWait(driver, Duration.ofSeconds(10));
+	w1.until(ExpectedConditions.titleIs("Google"));
+//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	WebElement gmail=driver.findElement(By.linkText("Gmail"));
+	Point p=gmail.getLocation();
+	int x=p.getX();
+	int y=p.getY();
+	System.out.println(X);
+	
+	boolean b1=gmail.isEnabled();
+	boolean b2=gmail.isDisplayed();
+	System.out.println(b1);
+	System.out.println(b2);
+	Actions a1=new Actions(driver);
+	a1.contextClick(gmail).perform();
+	Robot r1=new Robot();
+	r1.keyPress(KeyEvent.VK_DOWN);
+	r1.keyPress(KeyEvent.VK_ENTER);
+}
+}

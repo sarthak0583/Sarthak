@@ -1,0 +1,21 @@
+package testNGListener;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+@Listeners(Reporting.class)
+public class Testcase1 
+{
+	ChromeDriver driver;
+@Test
+public ChromeDriver loging()
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("http://www.google.com");
+	WebElement search=driver.findElement(By.name("q"));
+	search.sendKeys("India");
+	return driver;
+}
+}

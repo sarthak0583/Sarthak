@@ -1,0 +1,11 @@
+package mmt;
+
+import java.io.FileInputStream;
+
+public class Credentials 
+{
+	public void data()
+	{
+FileInputStream f1=new FileInputStream("C:\\Users\\Sarthak -FG WFH\\eclipse-workspace\\TestNG\\src\\mmt\\ExcelSheet\\credential.xlxs");
+}
+}

@@ -1,0 +1,41 @@
+package package1;
+public class Assignment_Logical_Operator
+{
+ public static void main(String[] args) 
+ {
+	 int a=10; int b=20;
+		if(a<=b && a!=b)
+		{
+		System.out.println("Hii");	
+		}
+		else
+		{
+			System.out.println("Bye");
+		}
+		if(a<b || a!=b)
+		{
+		System.out.println("Hello");	
+		}
+		else
+		{
+			System.out.println("Good Bye");
+		}
+		if()
+		{
+		System.out.println("");	
+		}
+		else
+		{
+			
+		}
+		if()
+		{
+		System.out.println("");	
+		}
+		else
+		{
+			
+		}
+	}
+
+}

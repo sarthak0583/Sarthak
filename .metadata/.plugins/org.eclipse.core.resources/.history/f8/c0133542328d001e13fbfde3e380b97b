@@ -1,0 +1,38 @@
+package newpackage;
+class Method_Overriding1
+{
+/*final*/void add()// if the method is changed to final then it can not be overridden
+	      {
+		    System.out.println("1");
+	      }
+       	void delete()
+	     {
+		    System.out.println("2");
+	      }
+}
+
+ public class Method_Overriding extends Method_Overriding1
+{
+	void add()
+	{
+		int a =10; int b=20;
+		int c= a+b;
+		System.out.println(c);
+		super.add();
+	}
+	void delete()
+	{
+		super.add(); // we use super keyword to call parent class method along the child class method.
+		super.delete();
+		int a =10; int b=20;
+		int c= a-b;
+		System.out.println(c);
+	}
+	public static void main(String[] args)
+	{
+		Method_Overriding m1=new Method_Overriding();
+		m1.add();
+		m1.delete();
+	}
+
+}

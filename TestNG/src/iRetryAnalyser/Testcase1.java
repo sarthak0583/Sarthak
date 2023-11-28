@@ -1,0 +1,22 @@
+package iRetryAnalyser;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Testcase1
+{
+WebDriver driver;
+@Test(retryAnalyzer=iRetryAnalyser.Retry_Logic.class)
+public void login()
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.google.com");
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	driver.findElement(By.name("Guddu")).sendKeys("sarthak");
+}
+}

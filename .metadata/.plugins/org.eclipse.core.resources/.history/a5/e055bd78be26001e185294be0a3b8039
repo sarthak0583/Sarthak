@@ -1,0 +1,23 @@
+package Newpackage;
+
+public class Student extends Teacher
+{
+	static void Learningjava()
+	{
+		System.out.println("learning java");
+	}
+	static void Learningselinium()
+	{
+		System.out.println("learning selinium");
+	}
+
+	public static void main(String[] args)
+	{
+		Learningjava();
+		Learningselinium();
+		java();
+		selinium();
+		
+	}
+
+}

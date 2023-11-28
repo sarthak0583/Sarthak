@@ -1,0 +1,40 @@
+package practice;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Make_My_Trip 
+{
+WebDriver driver;
+@Test
+public void booking()
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.makemytrip.com/");
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	WebElement frame1=driver.findElement(By.id("webklipper-publisher-widget-container-notification-frame"));
+	driver.switchTo().frame(frame1);
+	driver.findElement(By.xpath("//i[@class='wewidgeticon we_close']")).click();
+	driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
+	driver.findElement(By.xpath("(//span[@class='headerIconTextAlignment chNavText darkGreyText'])[5]")).click();
+	driver.findElement(By.id("fromCity")).click();
+//    driver.findElement(By.xpath("//span[.='Bhubaneswar']")).click();
+	WebElement from=driver.findElement(By.xpath("(//input[@title='From']"));
+	from.sendKeys("bhubaneswar");
+//	List<WebElement> departure=driver.findElements(By.xpath("//div[@class='react-autosuggest__section-container react-autosuggest__section-container--first']/ul/li"));
+//	int count=departure.size();
+//	departure.get(3).click();
+//	from.sendKeys(Keys.ENTER);
+	
+	
+	
+}
+}

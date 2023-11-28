@@ -1,0 +1,12 @@
+package mmt;
+
+import org.testng.annotations.BeforeMethod;
+
+public class LaunchAndQuit 
+{
+@BeforeMethod
+public void login()
+{
+	
+}
+}

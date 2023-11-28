@@ -1,0 +1,17 @@
+package package1;
+
+public class Ram 
+{
+	public static void salary()
+	{
+int salary=2000;
+int months=12;
+int totalsalary=salary*months;
+System.out.println(totalsalary);
+	}
+	public static void main(String[] args)
+	{
+		salary();
+	}
+
+}

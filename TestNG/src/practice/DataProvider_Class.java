@@ -1,0 +1,30 @@
+package practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataProvider_Class
+{
+	WebDriver driver;
+    @Test(dataProvider="Data")
+    public void login(String un,String psw)
+    {
+    	driver=new ChromeDriver();
+    	driver.manage().window().maximize();
+    	driver.navigate().to("https://www.facebook.com/login/");
+    	driver.findElement(By.id("email")).sendKeys(un);
+    	driver.findElement(By.id("pass")).sendKeys(psw);
+    	driver.findElement(By.id("loginbutton")).click();
+    }
+    @DataProvider(name="Data")
+    public Object[][] logout()
+    {
+		return null;
+    	
+    }
+}
+
+

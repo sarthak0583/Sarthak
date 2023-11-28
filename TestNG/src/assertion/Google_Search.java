@@ -1,0 +1,22 @@
+package assertion;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
+
+public class Google_Search
+{
+WebDriver driver;
+@Test
+public void launch()
+{
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.navigate().to("https://www.google.com");
+	Assertion a1=new Assertion();
+	a1.assertEquals("Gooogle",driver.getTitle());
+	driver.findElement(By.name("q")).sendKeys("India");
+}
+}
